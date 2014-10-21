@@ -1,0 +1,249 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center_one {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+body {
+  background: -moz-radial-gradient(ellipse, #e2e6f0, #f2f2f2);
+  background: -webkit-radial-gradient(ellipse, #e2e6f0, #f2f2f2);
+  background: radial-gradient(ellipse, #e2e6f0, #f2f2f2);
+}
+
+.btn_container, .text_container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 5% auto 0 auto;
+  text-align: left;
+}
+
+.header {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 2.9em;
+  font-weight: 100;
+  color: gray;
+  letter-spacing: 1.2px;
+}
+
+.explain {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.5em;
+  color: gray;
+  margin: 15px 0 35px 0;
+  letter-spacing: .7px;
+}
+
+#head{
+   margin-top: 20px;
+   height: 20px;
+   font-size: 2em;
+}
+
+
+
+.btn2 {
+  position: relative;
+  display: inline-block;
+  background: #fafafa;
+  width: 180px;
+  height: 50px;
+  margin: 0 0px;
+  cursor: pointer;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.btn2:before {
+  content: '';
+  position: absolute;
+  background: #b3e5ff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  height: 100%;
+  width: 0%;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.btn2:hover:before {
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .btn2 {
+    width: auto;
+  }
+  .btn2 .btn_text {
+    display: none;
+  }
+  .btn2 .svg_icon {
+    border: none;
+    padding: 16px 16px 16px 16px;
+  }
+  .btn2 .svg_icon:hover {
+    background: #b3e5ff;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .btn2:after {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 200%;
+    padding-top: 10px;
+    opacity: 0;
+    color: white;
+    background: #bde9ff;
+    margin-left: -40%;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 1.2em;
+    -moz-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    -o-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    -webkit-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  }
+  .btn2:hover:after {
+    opacity: 1;
+    margin-top: -60px;
+    -moz-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    -o-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    -webkit-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+    transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  }
+}
+
+.svg_icon {
+  float: left;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  fill: #333333;
+  background: #f2f2f2;
+  padding: 10px 6px 10px 6px;
+  border-right: 1px dotted rgba(0, 0, 0, 0.1);
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.btn_text {
+  position: relative;
+  float: left;
+  letter-spacing: 0.7px;
+  color: #333333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20pt;
+    line-height: 2.6em;
+  padding: 15px 0px 10px 26px;
+}
+
+.dummy_text {
+
+   font-size: 1em;
+   line-height:130%;
+}
+.dummy_text span {
+  position: relative;
+}
+.dummy_text span:before {
+  content: "";
+  position: absolute;
+  background: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -moz-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+.dummy_text span:hover:before {
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -moz-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  -o-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  -webkit-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+}
+.dummy_text span a {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1em;
+  position: relative;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  color: #66ccff;
+}
+.dummy_text span a:after {
+  content: "link to : " attr(data-attr);
+  position: absolute;
+  opacity: 0;
+  color: #333333;
+  background: #bde9ff;
+  margin-left: -150%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 400%;
+  -moz-transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1em;
+  -moz-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  -o-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  -webkit-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+  transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65);
+}
+.dummy_text span a:hover:after {
+  opacity: 1;
+  margin-top: -40px;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -moz-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65), opacity 0.3s ease;
+  -o-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65), opacity 0.3s ease;
+  -webkit-transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65), opacity 0.3s ease;
+  transition: 0.3s cubic-bezier(0, 1.65, 0.8, 1.65), opacity 0.3s ease;
+}

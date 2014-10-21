@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+$font_2 :  'Open Sans', sans-serif;
+$font_3 :  'Open Sans Condensed', sans-serif;
+$base_font : 1em;
+
+$le_text    :   #333333;
+$le_blue    :   lighten(#66CCFF,15%);
+$le_white   : 	#FFFFFF;
+
+$screen-sm-min: 768px;
+
+@mixin font-family( $font, $base_font ) {
+  font-family : $font;
+  font-size   : $base_font;
+}
+@mixin hover_1_set ( $top , $right , $left , $bottom , $height , $width ) {
+  top   : $top;
+  right : $right;
+  bottom: $bottom;
+  left  : $left;
+  height: $height;
+  width : $width;
+}
+* {
+  margin  : 0;
+  padding : 0;
+}
+.center_one {
+  display: table-cell; 
+  vertical-align: middle;
+}
+body {
+    @include background(radial-gradient(ellipse,	 #e2e6f0 , darken( #FFFFFF , 5%)));
+}
+.btn_container , .text_container {
+  position : relative;
+  display  : inline-block; 
+  width    : 100%;
+  margin   : 5% auto 0 auto;
+  text-align : center;
+}
+.header {
+  @include  font-family( $font_3 , 2.9em );
+  font-weight : 100;
+  color : lighten( $le_text, 30% );
+  letter-spacing : 1.2px;
+}
+.explain {
+   @include  font-family( $font_3 , 1.5em );
+   color : lighten( $le_text, 30% );
+   margin : 15px 0 35px 0;
+   letter-spacing : .7px;
+}
+.btn {
+	position : relative;
+  display  : inline-block;
+  background : darken($le_white,2%);
+  width  : 200px;
+  margin : 0 20px;
+  cursor : pointer;
+  @include transition (.2s ease-in-out);
+  @include single-box-shadow(rgba(0,0,0,0.2),0,2px,3px,0); 
+   &:before {
+    content  : '';
+    position : absolute;
+    background : $le_blue;
+    @include hover_1_set(0,0,auto,0,100%,0%);
+    @include transition (.3s ease-in-out);
+  }
+  &:hover:before {
+    @include hover_1_set(0,auto,0,0,100%,100%);
+    @include transition (.3s ease-in-out);
+  }
+  @media (max-width: $screen-sm-min) {
+    width : auto;
+    .btn_text {
+      display : none;
+    }
+    .svg_icon{
+      border : none;
+      padding : 16px 16px 16px 16px;
+      &:hover {
+         background : $le_blue;
+         @include transition (.2s ease-in-out);
+      }
+    }
+    &:after {
+      content : attr(data-attr);
+      position : absolute;
+      @include hover_1_set(0,0,0,0,40px,200%);
+      padding-top   : 10px;
+      opacity : 0;
+      color  : $le_white;
+      background : lighten($le_blue,2%); 
+      margin-left : -40%;
+      @include font-family($font_3,$base_font * 1.2);
+      @include transition (.3s cubic-bezier(0.000, 1.650, 0.800, 1.650) );
+    }
+    &:hover:after {
+       opacity : 1;
+       margin-top : -60px;
+       @include transition (.3s cubic-bezier(0.000, 1.650, 0.800, 1.650) );
+    }
+  }
+}
+.svg_icon{
+  float : left;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  fill: $le_text ;
+  background : darken($le_white,5%);
+  padding : 10px 6px 10px 6px;
+  border-right : 1px dotted rgba(0,0,0,0.1);
+  @include transition (.2s ease-in-out);
+}
+
+.btn_text {
+  position : relative;
+  float : left;
+  letter-spacing : 0.7px;
+  color : $le_text;
+  @include font-family($font_3,$base_font * 1.5);
+  padding : 15px 0px 10px 26px;
+}
+.dummy_text {
+   padding : 0 70px; 
+   color : $le_text;
+   letter-spacing : 1.2px;
+   line-height: 170%;
+   @include font-family($font_3,$base_font * 1.5);
+   span {
+     position : relative;
+     &:before {
+       content : ""; 
+       position : absolute;
+       background : $le_white;
+       @include hover_1_set(0,0,0,0,100%,100%);
+       @include  scale(0,0);
+       @include transition (.2s ease-out );
+     }
+     &:hover:before {
+       @include  scale(1,1);
+       @include transition (.3s cubic-bezier(0.000, 1.650, 0.800, 1.650) );
+     }
+     a {
+       @include font-family($font_3,$base_font * 1 );
+       position : relative;
+       letter-spacing : 1.2px;
+       text-decoration : none;
+       color : darken($le_blue,15%);
+      &:after {
+        content : "link to : " attr(data-attr);
+        position : absolute;
+        opacity : 0;
+        color  : $le_text;
+        background  : lighten($le_blue,2%); 
+        margin-left : -150%; 
+        @include hover_1_set(0,0,0,0,40px,400%);
+        @include scale(1,0);
+        @include font-family($font_3,$base_font);
+        @include transition (.3s cubic-bezier(0.000, 1.650, 0.800, 1.650) );
+      }
+      &:hover:after {
+         opacity : 1;
+         margin-top : -60px;
+         @include scale(1,1);
+         @include transition (.3s cubic-bezier(0.000, 1.650, 0.800, 1.650),opacity .3s ease);
+      }
+     }
+   }
+}
